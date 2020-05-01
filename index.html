@@ -14,8 +14,12 @@
   		border: 0.5px solid black;
   		border-collapse: collapse;
 	}
-	table {
+	.table-box{
 		width: 80%;
+		overflow: auto;
+	}
+	table {
+		width: 100%;
 	}
 
 	td {
@@ -24,6 +28,79 @@
 
 	th {
 		background-color: #edd395;
+	}
+	.wrap-collabsible {
+	  margin: 1.2rem 0;
+	}
+
+	input[type='checkbox'] {
+	  display: none;
+	}
+
+	.lbl-toggle {
+	  display: block;
+
+	  font-weight: bold;
+/*	  font-size: 1.2rem;*/
+	  text-align: left;
+
+	  padding: 1rem;
+
+	  color: #041931;
+	  background: #edd395;
+
+	  cursor: pointer;
+
+	  border-radius: 7px;
+	  transition: all 0.25s ease-out;
+	}
+
+	.lbl-toggle:hover {
+	  color: #7C5A0B;
+	}
+
+	.lbl-toggle::before {
+	  content: ' ';
+	  display: inline-block;
+
+	  border-top: 5px solid transparent;
+	  border-bottom: 5px solid transparent;
+	  border-left: 5px solid currentColor;
+	  vertical-align: middle;
+	  margin-right: .7rem;
+	  transform: translateY(-2px);
+
+	  transition: transform .2s ease-out;
+	}
+
+	.toggle:checked + .lbl-toggle::before {
+	  transform: rotate(90deg) translateX(-3px);
+	}
+
+	.collapsible-content {
+	  max-height: 0px;
+	  overflow: hidden;
+	  transition: max-height .25s ease-in-out;
+	}
+
+	.toggle:checked + .lbl-toggle + .collapsible-content {
+	  max-height: 100vh;
+	}
+
+	.toggle:checked + .lbl-toggle {
+	  border-bottom-right-radius: 0;
+	  border-bottom-left-radius: 0;
+	}
+
+	.collapsible-content .content-inner {
+	  background: none;
+	  border-bottom: 1px solid #7C5A0B;
+      border-top: 1px solid #7C5A0B;
+      border-left: 1px solid #7C5A0B;
+      border-right: 1px solid #7C5A0B;
+	  border-bottom-left-radius: 7px;
+	  border-bottom-right-radius: 7px;
+	  padding: .5rem 1rem;
 	}
 	@media only screen and (max-width:800px) {
   /* For tablets: */
@@ -37,9 +114,22 @@
 }
 @media only screen and (max-width:500px) {
   /* For mobile phones: */
+  .table-box{
+  	width: 100%;
+  }
+  #text {
+      z-index: 0;
+	    position: relative;
+	    top: 82px;
+	}
   .menu, .main, .right {
     width: 100%;
   }
+  #arabic {
+  	text-align: center;
+  	color: #edd395;
+  }
+
 	</style>
 	<body>
 		<h1 id="text"><center> Ramadan Study Group 2020 </center></h1>
@@ -47,6 +137,7 @@
 		<div class="stars"></div>
 		<div class="twinkling"></div>
 		<div class="maintext">
+			<h1 id="arabic" style="text-align:center;color:#DAA520">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
 			<h2> Salaams everyone and Ramadan Kareem! </h2> 
 			This website will be used to host resources and scheduling that we can use to study Quranic themes this month. Below you will find a tentative schedule for what we will cover this week. All archived material will be indicated with a link to the detailed document. Supporting materials will also be linked with the corresponding Surah and topics of discussion for that week. 
 			<br>
@@ -57,18 +148,18 @@
 				<li> 10-15 mins of contributions by everyone else. This can be in the form of complementary hadiths, connections to other Surahs, or different perspectives </li>
 				<li> 10-15 mins of reflections by everyone in the group. The goal of this will be to derive lessons we can learn from the Surahs, as well as 1-2 action items we can implement in our lives the following week. </li>
 			</ul>
-			<h3 id="schedule"> Here is a tentative schedule: </h3>
+			<h3 id="schedule"> Tentative Schedule </h3>
 			<!-- <br style="line-height:0px;" /> -->
-			<table><center>
-			<tbody><center>
-				<tr>
+			<div class="table-box">
+				<table><center>
+					<tbody><center>
+						<tr>
 					<th>Date</th>
 					<th>Surah</th>
 					<th>Study Quran Pages</th>
 					<th>Themes</th>
 					<th>Discussion Leader</th>
 					<th>Zoom Link</th>
-					<th>Discussion Link</th>
 				</tr>
 				<tr><center>
 					<td>May 2, 2020</td>
@@ -77,12 +168,10 @@
 					<td>prophethood, resurrection, judgement, Allah is All-Powerful</td>
 					<td>Fatima</td>
 					<td>Zoom Link</td>
-					<td><a href="https://docs.google.com/document/d/11KvAZSwpc2OjgTYSIKNgGDGnzMHts8zql-w6B09DeYo/edit"> Discussion Link </a></td>
 				</center></tr>
 				<tr><center>
 					<td>May 9, 2020</td>
 					<td>Surah TBD</td>
-					<td>TBD</td>
 					<td>TBD</td>
 					<td>TBD</td>
 					<td>TBD</td>
@@ -95,13 +184,73 @@
 					<td>TBD</td>
 					<td>TBD</td>
 					<td>TBD</td>
-					<td>TBD</td>
 				</center></tr>
-			</center></tbody>
-			</center></table>
-
-
-		</div>
+					</center></tbody>
+					</center></table>
+			</div>
+			<br>
+			<h3 id="schedule"> Resources </h3>
+			Below, I've aggregated notes on the Tafsir of different Surahs and Imam An-Nawawi's 40 Hadith
+			<br>
+			<h4 id="schedule"> Tafsir</h4>
+            <div class="wrap-collabsible">
+                <input id="collapsible" class="toggle" type="checkbox">
+                    <label for="collapsible" class="lbl-toggle">Surah Yasin</label>
+                        <div class="collapsible-content">
+                            <div class="content-inner">
+                                <p>
+                                	Themes of Surah Yasin include prophethood, resurrection, judgement, and Allah's omnipotence. A document on notes about this Tafsir can be found <a href="https://docs.google.com/document/d/11KvAZSwpc2OjgTYSIKNgGDGnzMHts8zql-w6B09DeYo/edit">here.</a>
+                                </p>
+                            </div>
+                        </div>
+            </div>
+            <div class="wrap-collabsible">
+                <input id="collapsible" class="toggle" type="checkbox">
+                    <label for="collapsible" class="lbl-toggle">Surah Waqiah</label>
+                        <div class="collapsible-content">
+                            <div class="content-inner">
+                                <p>
+                                	TBD
+                                </p>
+                            </div>
+                        </div>
+            </div>
+            <br>
+			<h4 id="schedule">Imam An-Nawawi's 40 Hadith</h4>
+            <div class="wrap-collabsible" class="mt-10">
+                <input id="collapsible2" class="toggle" type="checkbox">
+                    <label for="collapsible2" class="lbl-toggle">Hadith #1</label>
+                        <div class="collapsible-content">
+                            <div class="content-inner">
+                                <p>
+                                TBD
+                                </p>
+                            </div>
+                        </div>
+            </div>
+            <div class="wrap-collabsible" class="mt-10">
+                <input id="collapsible2" class="toggle" type="checkbox">
+                    <label for="collapsible2" class="lbl-toggle">Hadith #2</label>
+                        <div class="collapsible-content">
+                            <div class="content-inner">
+                                <p>
+                                TBD
+                                </p>
+                            </div>
+                        </div>
+            </div>
+            <div class="wrap-collabsible" class="mt-10">
+                <input id="collapsible2" class="toggle" type="checkbox">
+                    <label for="collapsible2" class="lbl-toggle">Hadith #3</label>
+                        <div class="collapsible-content">
+                            <div class="content-inner">
+                                <p>
+                                TBD
+                                </p>
+                            </div>
+                        </div>
+            </div>
+        </div>
 		<script type="text/javascript">
 		setTimeout(function(){
   			$('.moon').css("animation-play-state", "paused");
