@@ -5,10 +5,18 @@
 		<title>Ramadan Study Group 2020</title>
 		<link type="text/css" href="mystyle.css" rel="stylesheet">
 		<link type="text/css" href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+		<link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/237/crescent-moon_1f319.png">
 	</head>
 	<style>
+	#anim-wrap{
+		    background-image: linear-gradient(transparent,transparent, white);
+    	min-height: 195px;
+	}
+	body{
+		margin: 0px;
+	}
 	.maintext {
-  		margin: 10%;
+  		margin: 0% 10%;
 	}
 	table, tr, th, td {
   		border: 0.5px solid black;
@@ -17,17 +25,24 @@
 	.table-box{
 		width: 80%;
 		overflow: auto;
+		border-radius: 6px;
+  		border: 1px solid black;
 	}
 	table {
 		width: 100%;
+		border-spacing: 0;
+		  border-collapse: collapse;
+		  border-style: hidden;
 	}
 
 	td {
 		text-align: center;
+		border: 1px solid black;
 	}
 
 	th {
 		background-color: #edd395;
+		border: 1px solid black;
 	}
 	.wrap-collabsible {
 	  margin: 1.2rem 0;
@@ -112,6 +127,7 @@
     width: 100%;
   }
 }
+
 @media only screen and (max-width:500px) {
   /* For mobile phones: */
   .table-box{
@@ -125,6 +141,14 @@
   .menu, .main, .right {
     width: 100%;
   }
+ }
+
+ @media only screen and (max-width:1190px) {
+    #anim-wrap{
+    	min-height: 280px;
+    }
+ }
+
   #arabic {
   	text-align: center;
   	color: #edd395;
@@ -132,10 +156,12 @@
 
 	</style>
 	<body>
-		<h1 id="text"><center> Ramadan Study Group 2020 </center></h1>
-		<div class="moon"></div>
-		<div class="stars"></div>
-		<div class="twinkling"></div>
+		<div id="anim-wrap">
+			<h1 id="text"><center> Ramadan Study Group 2020 </center></h1>
+			<div class="moon"></div>
+			<div class="stars"></div>
+			<div class="twinkling"></div>
+		</div>
 		<div class="maintext">
 			<h1 id="arabic" style="text-align:center;color:#DAA520">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
 			<h2> Salaams everyone and Ramadan Kareem! </h2> 
