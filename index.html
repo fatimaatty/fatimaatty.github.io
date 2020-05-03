@@ -168,6 +168,17 @@
 .know-more {
 	color: #A4243B;
 }
+.tiptext {
+    color:#069; 
+    cursor:pointer;
+}
+.description {
+    display:none;
+    position:absolute;
+    border:1px solid #000;
+    width:400px;
+    height:400px;
+}
 	</style>
 	<body>
 		<div id="anim-wrap">
@@ -243,13 +254,26 @@
 			<div class="know-more">
 				<h5 id="know-more"><i>Want to understand the miracle of the Quran but don't know where to start?</i></h5>
 			</div>
+			<div class="wrap-collabsible">
+                <input id="collapsible00" class="toggle" type="checkbox">
+                    <label for="collapsible00" class="lbl-toggle">What is this Book?</label>
+                        <div class="collapsible-content">
+                            <div class="content-inner">
+                                <p>
+                                	This introduces what the Quran is, and what the author Himself says about the book. This will give a high-level understanding of the purpose for this revelation, and what approach to read it with. The outline can be found <a href="https://docs.google.com/document/d/1VwyJtlolVo8lxfAH6DIbsN45tVkejYZV8-VYB_Wb3hw/edit?usp=sharing" target="_blank">here.</a>
+                                </p>
+                            </div>
+                        </div>
+            </div>
             <div class="wrap-collabsible">
                 <input id="collapsible0" class="toggle" type="checkbox">
                     <label for="collapsible0" class="lbl-toggle">Quran - The Book of Allah </label>
                         <div class="collapsible-content">
                             <div class="content-inner">
                                 <p>
-                                	This introduces what the Quran is, what approach to read it with, the context in which it was revealed in, and some of the benefits to reading it. The outline can be found <a href="">here.</a>
+                                	This provides context in which the Quran was revealed in and some of the benefits to reading it. The outline can be found <a class= "tiptext">here.</a>
+    									<iframe class="description" src="www.gooogle.com" target="_blank" width = "400px" height = "500px">
+    									</iframe>
                                 </p>
                             </div>
                         </div>
@@ -260,7 +284,7 @@
                         <div class="collapsible-content">
                             <div class="content-inner">
                                 <p>
-                                	TBD
+                                	Content coming!
                                 </p>
                             </div>
                         </div>
@@ -271,7 +295,7 @@
                         <div class="collapsible-content">
                             <div class="content-inner">
                                 <p>
-                                	TBD
+                                	Content coming!
                                 </p>
                             </div>
                         </div>
@@ -282,7 +306,7 @@
                         <div class="collapsible-content">
                             <div class="content-inner">
                                 <p>
-                                	TBD
+                                	Content coming!
                                 </p>
                             </div>
                         </div>
@@ -293,7 +317,7 @@
                         <div class="collapsible-content">
                             <div class="content-inner">
                                 <p>
-                                	TBD
+                                	Content coming!
                                 </p>
                             </div>
                         </div>
@@ -304,7 +328,7 @@
                         <div class="collapsible-content">
                             <div class="content-inner">
                                 <p>
-                                	TBD
+                                	Content coming!
                                 </p>
                             </div>
                         </div>
@@ -315,7 +339,7 @@
                         <div class="collapsible-content">
                             <div class="content-inner">
                                 <p>
-                                	TBD
+                                	Content coming!
                                 </p>
                             </div>
                         </div>
@@ -326,7 +350,7 @@
                         <div class="collapsible-content">
                             <div class="content-inner">
                                 <p>
-                                	TBD
+                                	Content coming!
                                 </p>
                             </div>
                         </div>
@@ -337,7 +361,7 @@
                         <div class="collapsible-content">
                             <div class="content-inner">
                                 <p>
-                                	TBD
+                                	Content coming!
                                 </p>
                             </div>
                         </div>
@@ -361,7 +385,7 @@
                         <div class="collapsible-content">
                             <div class="content-inner">
                                 <p>
-                                	TBD
+                                	Content coming!
                                 </p>
                             </div>
                         </div>
@@ -396,7 +420,7 @@
                         <div class="collapsible-content">
                             <div class="content-inner">
                                 <p>
-                                TBD
+                                Content coming!
                                 </p>
                             </div>
                         </div>
@@ -406,6 +430,11 @@
 		setTimeout(function(){
   			$('.moon').css("animation-play-state", "paused");
 		}, 20000)
+		$(".tiptext").mouseover(function() {
+    		$(this).children(".description").show();
+		}).mouseout(function() {
+    	$(this).children(".description").hide();
+		});
 		</script>
 	</body>
 </html>
